@@ -40,7 +40,6 @@ void ord_Insercion(vector<TDATO> v, int tam){
             v[j+1] = temp;
         }
     }
-    cout << endl;
 };
 
 
@@ -56,7 +55,6 @@ void ord_burbuja(vector<TDATO> v, int tam) {
             }
         }
     }
-    cout << endl;
 }
 
 template<class TDATO> 
@@ -75,10 +73,10 @@ void deltasort(int d, vector<TDATO> &v, int n ){
 }
 
 template<class TDATO> 
-void ord_shellsort(vector<TDATO> &v, int tam){
+void ord_shellsort(vector<TDATO> &v, int tam, int alpha){
     int del = tam;
     while (del > 1) {
-        del = del / 2;
+        del = del * alpha;
         deltasort(del,v,tam);
     }
 }

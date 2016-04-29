@@ -84,9 +84,9 @@ void deltasort(int d, vector<TDATO> &v, int n ){
             j = (j - d);
 
         } 
-        cout << "Comparación: " << v[j] << " y " << x;
+        //cout << "Comparación: " << v[j] << " y " << x << endl;
         v[j] = x;
-        cout << ", Vector -->  ";
+        cout << "Vector -->  ";
         imprimir(v);
         cout << endl;
     }
@@ -94,10 +94,10 @@ void deltasort(int d, vector<TDATO> &v, int n ){
 }
 
 template<class TDATO> 
-void ord_shellsort(vector<TDATO> &v, int tam){
+void ord_shellsort(vector<TDATO> &v, int tam, double alpha){
     int del = tam;
     while (del > 1) {
-        del = del / 2;
+        del = del * alpha;
         deltasort(del,v,tam);
     }
 }

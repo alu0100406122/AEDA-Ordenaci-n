@@ -33,6 +33,8 @@ int main(){
         v.resize(v.size()+1);
         v[i] = v_aux;
     }
+    
+    //Mostramos los vectores aleatorios generados
     cout << "Vectores aleatorios para realizar la estadística: " << endl;
     for (int i=0; i < v.size(); i++){
         for (int j=0; j < n; j++){
@@ -136,9 +138,11 @@ int main(){
     cout << "ORDENACIÓN POR SHELLSORT" << endl;
     cout << "-----------------------------------------------------" << endl;
     cout << "Contador inicial de comparaciones: " << DNI::comp << endl;
+    int alpha = 0.5;
+    cout << "Suponemos que el valor de alpha es 0.5 para la prueba estadística." << endl;
     for (int i=0; i < pruebas; i++){
         vector<TDATO> aux = v[i];
-        ord_shellsort(aux,n);
+        ord_shellsort(aux,n,alpha);
         //cout << "Vector : " << i << "-> Comparaciones: " << DNI::comp << endl;
         v_comp_shell[i] = DNI::comp;
         DNI::comp = 0;

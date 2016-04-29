@@ -11,6 +11,7 @@ int main(){
     int num;
     int n;
     int opcion;
+    double alpha;
     vector<TDATO> v1;
     vector<TDATO> v_aux;
     cout << endl;
@@ -59,10 +60,13 @@ int main(){
         case 3:
             cout << "Ordenación por Incrementos decrecientes. ShellSort." << endl;
             cout << "----------------------------------------------------" << endl;
+            cout << "Introduzca el valor de alpha (0~1): ";
+            cin >> alpha;
+            cout << endl;
+            ord_shellsort(v1, n, alpha);
             cout << "Vector Desordenado... " << endl;
             imprimir(v1);
             cout << endl;
-            ord_shellsort(v1, n);
             cout << "Vector ordenado... " << endl;
             imprimir(v1);
             break;
